@@ -1,0 +1,5 @@
+CREATE TABLE IF NOT EXISTS quote(
+	id INT AUTO_INCREMENT PRIMARY KEY,
+	text varchar(500) NOT NULL,
+	author varchar(500) NOT NULL
+);

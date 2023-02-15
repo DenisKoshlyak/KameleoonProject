@@ -1,0 +1,245 @@
+<!Doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<style>
+.btn-group button {
+    background-color: #4CAF50; 
+    border: 1px solid green; 
+    color: white;
+    padding: 10px; 
+    cursor: pointer; 
+    float: left; 
+    width: 25%
+}
+
+.btn-group:after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.btn-group button:hover {
+    background-color: #3e8e41;
+}
+
+blockquote {
+    display: block;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 40px;
+    margin-right: 390px;
+}
+
+.quote blockquote {
+	background-color: #ccc;
+    display: block;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 40px;
+    margin-right: 390px;
+}
+
+.page-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.right-panel-wrapper {
+  width: 200px;
+}
+.content-wrapper {
+  width: calc(100% - 400px);
+  padding: 0 30px;
+}
+
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.single-btn button {
+    background-color: #3e8e41;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+.container {
+    padding: 16px;
+}
+
+@media screen and (max-width: 300px) {
+    span.psw {
+       display: block;
+       float: none;
+    }
+    .cancelbtn {
+       width: 100%;
+    }
+}
+</style>
+<body>
+<div class="btn-group">
+  <form action="/profile" method="GET">
+  	<button >Profile</button>
+  </form>
+  <form action="/top" method="GET">
+  	<button >Top 10</button>
+  </form>
+  <form action="/loose" method="GET">
+  	<button >Flop 10</button>
+  </form>
+  <form action="/last" method="GET">
+  	<button >Last</button>
+  </form>
+</div>
+<div class="page-wrapper">
+  <div class="content-wrapper">
+    <div class="content">
+    <div class="quote">
+    	<blockquote>
+ 					<p th:text="${randomQuote.text}"></p>
+ 					<p th:text="${randomQuote.author}"></p>
+    	</blockquote>
+ 		
+    	<blockquote>
+ 					<p th:text="${quote0.text}"></p>
+ 					<p th:text="${quote0.author}"></p>
+ 					<div class="btn-group">
+ 						<form action="/getLike" method="GET">
+  							<button type="submit" name="position" value="0">Like</button>
+ 						</form>
+ 						<form action="/getDislike" method="GET">
+  							<button type="submit" name="position" value="0">Dislike</button>
+ 						</form>
+ 					</div>
+    	</blockquote>
+    	
+    	<blockquote>
+ 					<p th:text="${quote1.text}"></p>
+ 					<p th:text="${quote1.author}"></p>
+ 					<div class="btn-group">
+ 						<form action="/getLike" method="GET">
+  							<button type="submit" name="position" value="1">Like</button>
+ 						</form>
+ 						<form action="/getDislike" method="GET">
+  							<button type="submit" name="position" value="1">Dislike</button>
+ 						</form>
+ 					</div>
+    	</blockquote>
+    	
+    	<blockquote>
+ 					<p th:text="${quote2.text}"></p>
+ 					<p th:text="${quote2.author}"></p>
+ 					<div class="btn-group">
+ 						<form action="/getLike" method="GET">
+  							<button type="submit" name="position" value="2">Like</button>
+ 						</form>
+ 						<form action="/getDislike" method="GET">
+  							<button type="submit" name="position" value="2">Dislike</button>
+ 						</form>
+ 					</div>
+    	</blockquote>
+    	
+    	<blockquote>
+ 					<p th:text="${quote3.text}"></p>
+ 					<p th:text="${quote3.author}"></p>
+ 					<div class="btn-group">
+ 						<form action="/getLike" method="GET">
+  							<button type="submit" name="position" value="3">Like</button>
+ 						</form>
+ 						<form action="/getDislike" method="GET">
+  							<button type="submit" name="position" value="3">Dislike</button>
+ 						</form>
+ 					</div>
+    	</blockquote>
+    	
+    	<blockquote>
+ 					<p th:text="${quote4.text}"></p>
+ 					<p th:text="${quote4.author}"></p>
+ 					<div class="btn-group">
+ 						<form action="/getLike" method="GET">
+  							<button type="submit" name="position" value="4">Like</button>
+ 						</form>
+ 						<form action="/getDislike" method="GET">
+  							<button type="submit" name="position" value="4">Dislike</button>
+ 						</form>
+ 					</div>
+    	</blockquote>
+    	
+    	<blockquote>
+ 					<p th:text="${quote5.text}"></p>
+ 					<p th:text="${quote5.author}"></p>
+ 					<div class="btn-group">
+ 						<form action="/getLike" method="GET">
+  							<button type="submit" name="position" value="5">Like</button>
+ 						</form>
+ 						<form action="/getDislike" method="GET">
+  							<button type="submit" name="position" value="5">Dislike</button>
+ 						</form>
+ 					</div>
+    	</blockquote>
+    	
+    	<blockquote>
+ 					<p th:text="${quote6.text}"></p>
+ 					<p th:text="${quote6.author}"></p>
+ 					<div class="btn-group">
+ 						<form action="/getLike" method="GET">
+  							<button type="submit" name="position" value="6">Like</button>
+ 						</form>
+ 						<form action="/getDislike" method="GET">
+  							<button type="submit" name="position" value="6">Dislike</button>
+ 						</form>
+ 					</div>
+    	</blockquote>
+    	
+    	<blockquote>
+ 					<p th:text="${quote7.text}"></p>
+ 					<p th:text="${quote7.author}"></p>
+ 					<div class="btn-group">
+ 						<form action="/getLike" method="GET">
+  							<button type="submit" name="position" value="7">Like</button>
+ 						</form>
+ 						<form action="/getDislike" method="GET">
+  							<button type="submit" name="position" value="7">Dislike</button>
+ 						</form>
+ 					</div>
+    	</blockquote>
+    	
+    	<blockquote>
+ 					<p th:text="${quote8.text}"></p>
+ 					<p th:text="${quote8.author}"></p>
+ 					<div class="btn-group">
+ 						<form action="/getLike" method="GET">
+  							<button type="submit" name="position" value="8">Like</button>
+ 						</form>
+ 						<form action="/getDislike" method="GET">
+  							<button type="submit" name="position" value="8">Disike</button>
+ 						</form>
+ 					</div>
+    	</blockquote>
+    	
+    	<blockquote>
+ 					<p th:text="${quote9.text}"></p>
+ 					<p th:text="${quote9.author}"></p>
+ 					<div class="btn-group">
+ 						<form action="/getLike" method="GET">
+  							<button type="submit" name="position" value="9">Like</button>
+ 						</form>
+ 						<form action="/getDislike" method="GET">
+  							<button type="submit" name="position" value="9">Dislike</button>
+ 						</form>
+ 					</div>
+    	</blockquote>
+    	</div>
+    </div>
+    </div>
+</div>
+</body>
+</html>

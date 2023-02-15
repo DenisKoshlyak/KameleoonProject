@@ -1,0 +1,96 @@
+<!Doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<style>
+.btn-group button {
+    background-color: #4CAF50; 
+    border: 1px solid green; 
+    color: white;
+    padding: 10px; 
+    cursor: pointer; 
+    float: left; 
+    width: 25%
+}
+
+.btn-group:after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.btn-group button:hover {
+    background-color: #3e8e41;
+}
+
+blockquote {
+    display: block;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 40px;
+    margin-right: 390px;
+}
+
+.page-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.right-panel-wrapper {
+  width: 200px;
+}
+.content-wrapper {
+  width: calc(100% - 400px);
+  padding: 0 30px;
+}
+
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.container {
+    padding: 16px;
+}
+
+@media screen and (max-width: 300px) {
+    span.psw {
+       display: block;
+       float: none;
+    }
+    .cancelbtn {
+       width: 100%;
+    }
+}
+</style>
+<body>
+<div class="btn-group">
+  <form action="/profile" method="GET">
+  	<button >Profile</button>
+  </form>
+  <form action="/top" method="GET">
+  	<button >Top 10</button>
+  </form>
+  <form action="/loose" method="GET">
+  	<button >Flop 10</button>
+  </form>
+  <form action="/last" method="GET">
+  	<button >Last</button>
+  </form>
+</div>
+<div class="page-wrapper">
+  <div class="content-wrapper">
+    <div class="content">
+    <div class="quote">
+    	<blockquote>
+ 					<p th:text="${randomQuote.text}"></p>
+ 					<p th:text="${randomQuote.author}"></p>
+    	</blockquote>
+    </div>
+    </div>
+  </div>
+  </div>
+</body>
+</html>
