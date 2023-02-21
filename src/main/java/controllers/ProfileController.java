@@ -56,10 +56,6 @@ public class ProfileController {
 		return "createProfile.html";
 	}
 	
-	@PostMapping("/setUsername")
-	public String setUsername(@RequestParam String username) {
-		return service.setUsername(username);
-	}
 	
 	@PostMapping("/setPassword")
 	public String setPassword(@RequestParam String password) {

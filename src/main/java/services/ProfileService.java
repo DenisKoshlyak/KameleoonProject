@@ -26,15 +26,6 @@ public class ProfileService {
 		return profiles.get(username);
 	}
 	
-	public String setUsername(String username) {
-		if(!checkUsername(username)) {
-			profiles.put(username, new Profile(username));
-			newUsername = username;
-			return "setPassword.html";
-		}
-		else
-			return "redirect:/";
-	}
 	
 	public boolean checkUsername(String username) {
 		return profiles.containsKey(username);

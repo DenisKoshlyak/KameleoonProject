@@ -79,13 +79,13 @@ public class QuoteController {
 	@GetMapping("/getLike")
 	public String getLike(@RequestParam int position) {
 		service.likeThis(topList.get(position).getId());
-		return "redirect:";
+		return "redirect:/top";
 	}
 	
 	@GetMapping("/getDislike")
 	public String getDislike(@RequestParam int position) {
 		service.dislikeThis(topList.get(position).getId());
-		return "redirect:";
+		return "redirect:/loose";
 	}
 	
 	@GetMapping("/last")
